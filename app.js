@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var sendNotificationButton = document.getElementById('send-notification');
     sendNotificationButton.addEventListener('click', function () {
         navigator.serviceWorker.ready.then(function (registration) {
-            registration.active.postMessage({
+            registration.showNotification({
                 title: 'Immediate Notification',
                 options: {
                     body: 'This is an immediate notification',
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     delayNotificationButton.addEventListener('click', function () {
         setTimeout(function () {
             navigator.serviceWorker.ready.then(function (registration) {
-                registration.active.postMessage({
+                registration.showNotification({
                     title: 'Delayed Notification',
                     options: {
                         body: 'This is a delayed notification',
