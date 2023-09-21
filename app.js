@@ -23,12 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var sendNotificationButton = document.getElementById('send-notification');
     sendNotificationButton.addEventListener('click', function () {
         navigator.serviceWorker.ready.then(function (registration) {
-            registration.showNotification({
-                title: 'Immediate Notification',
-                options: {
-                    body: 'This is an immediate notification',
-                    // Add other notification options here
-                }
+            registration.showNotification('Immediate Notification', {
+                body: 'Bzz bzz bzz bzz',
+                vibrate: [200, 100, 200, 100, 200, 100, 200],
+                tag: "sample",
             });
         });
     });
@@ -37,12 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
     delayNotificationButton.addEventListener('click', function () {
         setTimeout(function () {
             navigator.serviceWorker.ready.then(function (registration) {
-                registration.showNotification({
-                    title: 'Delayed Notification',
-                    options: {
+                registration.showNotification('Delayed Notification', {
                         body: 'This is a delayed notification',
-                        // Add other notification options here
-                    }
+                        tag: "delayed",
+                    });
                 });
             });
         }, 8000);
