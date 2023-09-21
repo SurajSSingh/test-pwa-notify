@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     tag: "delayed",
                 });
             });
-        });
-    }, 8000);
+        }, 8000);
+    });
 });
