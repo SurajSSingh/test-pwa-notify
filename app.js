@@ -36,11 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             navigator.serviceWorker.ready.then(function (registration) {
                 registration.showNotification('Delayed Notification', {
-                        body: 'This is a delayed notification',
-                        tag: "delayed",
-                    });
+                    body: 'This is a delayed notification',
+                    tag: "delayed",
                 });
             });
-        }, 8000);
-    });
+        });
+    }, 8000);
 });
